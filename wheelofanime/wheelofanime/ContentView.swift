@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var selected: Int = 0
+    
     var body: some View {
-        Text("Hello, guy!")
+        Text("Wheel Of Anime!")
             .padding()
     }
 }
