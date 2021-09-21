@@ -19,10 +19,14 @@ struct ContentView: View {
             
             ForEach(1...4, id: \.self) { index in
                 
-                Image("p1\(index)")
-                    .resizable()
-                    .frame(width: 400.0, height: 400.0)
-                    .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                ZStack {
+                    GeometryReader { reader in
+                        Image("P\(index)")
+                            .resizable()
+                            .frame(width: 200.0, height: 200.0)
+                            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                    }
+                }
             }
         }
     }
