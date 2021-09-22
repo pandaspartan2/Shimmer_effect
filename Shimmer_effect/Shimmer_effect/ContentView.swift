@@ -33,11 +33,20 @@ struct ShimmerText: View {
                     
                     Text(String(text[text.index(text.startIndex, offsetBy: index)]))
                         .font(.system(size: 75, weight: .bold))
+                        .foregroundColor(randomColor())
                 }
             }
         }
     }
+    
+    func randomColor() -> Color {
+        
+        let Thompson = UIColor(red: CGFloat.random(in: 0...1), green: .random(in: 0...1), blue: .random(in: 0...1), alpha: 1)
+        
+        return Color(Thompson)
+    }
 }
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
