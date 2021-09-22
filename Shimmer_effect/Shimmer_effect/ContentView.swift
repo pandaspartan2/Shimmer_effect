@@ -21,6 +21,8 @@ struct ShimmerText: View {
     
     var text: String
     
+    @State var animation = false
+    
     var body: some View {
         ZStack {
             Text(text)
@@ -36,6 +38,25 @@ struct ShimmerText: View {
                         .foregroundColor(randomColor())
                 }
             }
+            .mask(
+            
+            Rectangle()
+                
+                .fill(
+                    
+                    LinearGradient(gradient: .init(colors: [Color.white.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
+                )
+                .rotationEffect(.init(degrees: 70))
+                .padding(20)
+            
+                )
+            
+            .onAppear(perform: {
+                withAnimation(Animation.linear(duration: 2.0).repeatForever(autoreverses: false))
+                {
+                    animation.toggle()
+                }
+            })
         }
     }
     
