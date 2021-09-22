@@ -10,10 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-        ShimmerText(text: "Joshua")        
+        ShimmerText(text: "I")
         ShimmerText(text: "is")
         ShimmerText(text: "here")
     }
+        .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
 }
 }
 struct ShimmerText: View {
@@ -25,6 +26,15 @@ struct ShimmerText: View {
             Text(text)
                 .font(.system(size: 75, weight: .bold))
                 .foregroundColor(Color.white.opacity(0.25))
+            
+            HStack(spacing: 0){
+                
+                ForEach(0..<text.count, id: \.self) { index in
+                    
+                    Text(String(text[text.index(text.startIndex, offsetBy: index)]))
+                        .font(.system(size: 75, weight: .bold))
+                }
+            }
         }
     }
 }
