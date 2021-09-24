@@ -9,9 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-    Image("guy")
-        .resizable()
-        .padding()
+        VStack {
+            Image("guy")
+            .resizable()
+                .padding()
+            Text("Salad!")
+                .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+        }
     }
 }
 
