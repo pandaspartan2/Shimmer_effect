@@ -51,8 +51,13 @@ struct ContentView: View {
 
         }
     }
+        .onAppear {
+        let sound = Bundle.main.path(forResource: "song1", ofType: "mp3")
+        audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+        }
+    }
 }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
